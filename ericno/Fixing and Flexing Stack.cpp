@@ -113,4 +113,54 @@ class Flexstack
 };
 
 int main(void)
+{
+	int x;
+	cout<<"Write size of stack: "<<endl;
+	cin>> x;
+	Flexstack F;
+	F.setsize(x);
+	
+	char a;
+	cout<<"Write first Char of stack: "<<endl;
+	cin>> a;
+	F.setstack(a);
+	
+    int Act;
+    do
+	{
+	cout<<"What you gonna do"<<endl;
+    cout<<"1.Read 2.Add 3.Delete 4.Check if full or empty 5.End"<<endl;
+    cin>>Act;
+    switch (Act)
+      {
+      	case 1:
+      		F.readstack();
+      		break;
+      	case 2:
+      		cout<<"Write one Char to add"<<endl;
+      		char a;
+			cin>>a;
+			F.addstack(a);
+			break;
+      	case 3:
+      	 	cout<<"How much would you like to delete?"<<endl;
+      	 	int i;
+      	 	cin>>i;
+		  	F.popstack(i);
+		  	break;
+	case 4:
+		F.fullorempty();
+			break;
+	case 5:
+		cout<<""<<endl;
+		break; 
+	default:
+		cout<<"Unknown"<<endl;
+		break;
+ 	
+	  }
+	}while (Act!=5);
+    
+    cout<<"End"<<endl;
+}
 
